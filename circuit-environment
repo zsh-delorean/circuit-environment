@@ -46,6 +46,14 @@ function circuit-environment {
     export LESS_TERMCAP_us=$'\E[01;32m'      # Begins underline.
   fi
 
+  #
+  # Reset to default key bindings.
+  #
+
+  if [[ "$TERM" != 'dumb' ]]; then
+    bindkey -d
+  fi
+
 }
 
 return 0
